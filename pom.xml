@@ -84,6 +84,7 @@
 
                                 <echo message="moving resources" />
                                 <move file="${extractDir}/jit-yc.js" toDir="${destDir}" />
+								<move file="${extractDir}/jit.js" toDir="${destDir}" />
                             </target>
                         </configuration>
                     </execution>
