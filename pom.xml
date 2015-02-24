@@ -40,9 +40,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstreamVersion>2.0.1</upstreamVersion>
-        <upstream.url>http://philogb.github.io/jit/downloads/</upstream.url>
-        <extractDir>${project.build.directory}/Jit</extractDir>
+        <upstreamVersion>2.0.2</upstreamVersion>
+        <upstream.url>https://github.com/philogb/jit/archive/</upstream.url>
+        <extractDir>${project.build.directory}/jit-${upstreamVersion}/Jit</extractDir>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstreamVersion}</destDir>
     </properties>
 
@@ -61,7 +61,7 @@
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>Jit-${upstreamVersion}.zip</fromFile>
+                            <fromFile>${upstreamVersion}.zip</fromFile>
                             <toDir>${project.build.directory}</toDir>
                         </configuration>
                     </execution>
@@ -80,7 +80,7 @@
                         <configuration>
                             <target>
                                 <echo message="unzip archive" />
-                                <unzip src="${project.build.directory}/Jit-${upstreamVersion}.zip" dest="${project.build.directory}" />
+                                <unzip src="${project.build.directory}/${upstreamVersion}.zip" dest="${project.build.directory}" />
 
                                 <echo message="moving resources" />
                                 <move file="${extractDir}/jit-yc.js" toDir="${destDir}" />
